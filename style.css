@@ -1,0 +1,202 @@
+/* --- VARIABLES Y RESET --- */
+:root {
+    --bg-main: #1E1E2F;
+    --bg-card: #2A2D3E;
+    --bg-input: #35394f;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B3C0;
+    --color-success: #27AE60;
+    --color-danger: #E74C3C;
+    --color-warning: #F1C40F;
+    --color-info: #3498DB;
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- HEADER --- */
+.header {
+    height: 70px;
+    background-color: var(--bg-card);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--color-info);
+}
+
+.header-user {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.header-user span {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.main-container {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    border-left: 4px solid var(--color-info);
+    padding-left: 15px;
+}
+
+.section-header {
+    margin: 25px 0 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    font-size: 18px;
+    color: var(--color-info);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.section-header::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(176, 179, 192, 0.2);
+    margin-left: 15px;
+}
+
+/* --- FORMULARIO --- */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input, select {
+    background-color: var(--bg-input);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 12px 15px;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-family: var(--font-main);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: var(--color-info);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Estilo para el ícono del select */
+select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23B0B3C0' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+}
+
+/* --- BOTONES --- */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.btn-save {
+    background-color: var(--color-success);
+}
+
+.btn-cancel {
+    background-color: var(--color-danger);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .full-width {
+        grid-column: span 1;
+    }
+    .card {
+        padding: 25px 20px;
+    }
+    .header {
+        padding: 0 20px;
+    }
+}

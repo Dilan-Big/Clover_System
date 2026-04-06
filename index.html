@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logística Clover System - Registro de Pedidos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-logo">LOGÍSTICA CLOVER SYSTEM</div>
+        <div class="header-user">Asesor: <span>Juan Pérez</span></div>
+    </header>
+
+    <main class="main-container">
+        <div class="card">
+            <h1>Registrar nuevo pedido</h1>
+
+            <form action="#">
+                <div class="section-header">
+                    <h2>Información del Cliente</h2>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nombre">Nombre del cliente</label>
+                        <input type="text" id="nombre" placeholder="Ej. Maria Garcia" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Teléfono</label>
+                        <input type="tel" id="tel" placeholder="300 000 0000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad</label>
+                        <input type="text" id="ciudad" placeholder="Medellín, Antioquia" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dir">Dirección</label>
+                        <input type="text" id="dir" placeholder="Calle 123 #45-67" required>
+                    </div>
+                </div>
+
+                <div class="section-header">
+                    <h2>Información del Pedido</h2>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="producto">Producto</label>
+                        <input type="text" id="producto" placeholder="Nombre del producto o SKU" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" id="cantidad" value="1" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="valor">Valor del pedido (COP)</label>
+                        <input type="number" id="valor" placeholder="0.00">
+                    </div>
+                    <div class="form-group">
+                        <label for="fuente">Fuente del pedido</label>
+                        <select id="fuente">
+                            <option value="fb">Facebook Ads</option>
+                            <option value="tk">TikTok Ads</option>
+                            <option value="ig">Instagram</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">Estado inicial</label>
+                        <select id="estado">
+                            <option value="nuevo">Pedido nuevo</option>
+                            <option value="revision">Pendiente de revisión</option>
+                            <option value="contactado">Cliente contactado</option>
+                            <option value="confirmado">Confirmado</option>
+                            <option value="cancelado">Cancelado</option>
+                            <option value="error-dir">Dirección incorrecta</option>
+                            <option value="no-resp">No responde</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="section-header">
+                    <h2>Clasificación Logística</h2>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="tipo">Tipo de cliente</label>
+                        <select id="tipo">
+                            <option value="nuevo">Cliente nuevo</option>
+                            <option value="recurrente">Cliente recurrente</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="confianza">Nivel de confianza</label>
+                        <select id="confianza">
+                            <option value="alto">Alto</option>
+                            <option value="medio">Medio</option>
+                            <option value="bajo">Bajo</option>
+                            <option value="riesgoso">Riesgoso</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn btn-cancel">Cancelar</button>
+                    <button type="submit" class="btn btn-save">Guardar pedido</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>
