@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logística Clover System - Registro de Pedidos</title>
+    <title>Logística Clover System - Panel de Registro Externo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,100 +16,121 @@
         <div class="header-user">Asesor: <span>Juan Pérez</span></div>
     </header>
 
-    <main class="main-container">
-        <div class="card">
-            <h1>Registrar nuevo pedido</h1>
+    <main class="main-viewport">
+        <form action="#" class="full-screen-form">
+            
+            <div class="client-quick-bar">
+                <div class="form-group">
+                    <label for="nombre">Nombre Cliente</label>
+                    <input type="text" id="nombre" placeholder="Nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="tel">Teléfono</label>
+                    <input type="tel" id="tel" placeholder="300 000 0000" required>
+                </div>
+                <div class="form-group">
+                    <label for="dpto">Departamento</label>
+                    <input type="text" id="dpto" placeholder="Ej. Antioquia" required>
+                </div>
+                <div class="form-group">
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text" id="ciudad" placeholder="Ej. Medellín" required>
+                </div>
+                <div class="form-group flex-grow">
+                    <label for="dir">Dirección completa</label>
+                    <input type="text" id="dir" placeholder="Calle, Carrera, Barrio, Apto" required>
+                </div>
+            </div>
 
-            <form action="#">
-                <div class="section-header">
-                    <h2>Información del Cliente</h2>
+            <div class="central-obs-zone">
+                <div class="obs-header">
+                    <div class="form-group method-selector">
+                        <label for="metodo_com">Método de comunicación</label>
+                        <select id="metodo_com" required>
+                            <option value="" disabled selected>Seleccione método</option>
+                            <option value="whatsapp">WhatsApp</option>
+                            <option value="chateapro">Chatea Pro</option>
+                            <option value="llamada">Llamada telefónica</option>
+                            <option value="correo">Correo electrónico</option>
+                        </select>
+                    </div>
+                    <h2>Detalle de la interacción / Observaciones críticas</h2>
                 </div>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="nombre">Nombre del cliente</label>
-                        <input type="text" id="nombre" placeholder="Ej. Maria Garcia" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="tel">Teléfono</label>
-                        <input type="tel" id="tel" placeholder="300 000 0000" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="ciudad">Ciudad</label>
-                        <input type="text" id="ciudad" placeholder="Medellín, Antioquia" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="dir">Dirección</label>
-                        <input type="text" id="dir" placeholder="Calle 123 #45-67" required>
-                    </div>
+                
+                <div class="textarea-container">
+                    <label for="observaciones" class="sr-only">Observaciones (más de 500 caracteres)</label>
+                    <textarea id="observaciones" name="observaciones" maxlength="2000" placeholder="Registre aquí el resumen detallado de la conversación, acuerdos, objeciones o cambios solicitados por el cliente vía WhatsApp, llamada o Chatea Pro. Este campo es obligatorio para el seguimiento logístico." required></textarea>
+                    <div class="char-count">Máx 2000 caracteres</div>
                 </div>
+            </div>
 
-                <div class="section-header">
-                    <h2>Información del Pedido</h2>
-                </div>
-                <div class="form-grid">
-                    <div class="form-group full-width">
-                        <label for="producto">Producto</label>
-                        <input type="text" id="producto" placeholder="Nombre del producto o SKU" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cantidad">Cantidad</label>
-                        <input type="number" id="cantidad" value="1" min="1">
-                    </div>
-                    <div class="form-group">
-                        <label for="valor">Valor del pedido (COP)</label>
-                        <input type="number" id="valor" placeholder="0.00">
-                    </div>
-                    <div class="form-group">
-                        <label for="fuente">Fuente del pedido</label>
-                        <select id="fuente">
-                            <option value="fb">Facebook Ads</option>
-                            <option value="tk">TikTok Ads</option>
-                            <option value="ig">Instagram</option>
-                            <option value="otro">Otro</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="estado">Estado inicial</label>
-                        <select id="estado">
-                            <option value="nuevo">Pedido nuevo</option>
-                            <option value="revision">Pendiente de revisión</option>
-                            <option value="contactado">Cliente contactado</option>
-                            <option value="confirmado">Confirmado</option>
-                            <option value="cancelado">Cancelado</option>
-                            <option value="error-dir">Dirección incorrecta</option>
-                            <option value="no-resp">No responde</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="section-header">
-                    <h2>Clasificación Logística</h2>
-                </div>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="tipo">Tipo de cliente</label>
-                        <select id="tipo">
-                            <option value="nuevo">Cliente nuevo</option>
-                            <option value="recurrente">Cliente recurrente</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="confianza">Nivel de confianza</label>
-                        <select id="confianza">
-                            <option value="alto">Alto</option>
-                            <option value="medio">Medio</option>
-                            <option value="bajo">Bajo</option>
-                            <option value="riesgoso">Riesgoso</option>
-                        </select>
+            <div class="bottom-data-bar">
+                
+                <div class="data-section">
+                    <h3>Información del Pedido</h3>
+                    <div class="sub-grid-pedido">
+                        <div class="form-group full-width">
+                            <label for="producto">Producto</label>
+                            <input type="text" id="producto" placeholder="Producto o SKU" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cantidad">Cant.</label>
+                            <input type="number" id="cantidad" value="1" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="valor">Valor (COP)</label>
+                            <input type="number" id="valor" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="fuente">Fuente</label>
+                            <select id="fuente">
+                                <option value="fb">Facebook</option>
+                                <option value="tk">TikTok</option>
+                                <option value="ig">Instagram</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <select id="estado">
+                                <option value="nuevo">Pedido nuevo</option>
+                                <option value="revision">Pendiente</option>
+                                <option value="confirmado">Confirmado</option>
+                                <option value="cancelado">Cancelado</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
-                <div class="button-group">
+                <div class="data-section">
+                    <h3>Clasificación Logística</h3>
+                    <div class="sub-grid-clasificacion">
+                        <div class="form-group">
+                            <label for="tipo">Tipo de cliente</label>
+                            <select id="tipo">
+                                <option value="nuevo">Nuevo</option>
+                                <option value="recurrente">Recurrente</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="confianza">Nivel de confianza</label>
+                            <select id="confianza">
+                                <option value="alto">Alto</option>
+                                <option value="medio">Medio</option>
+                                <option value="bajo">Bajo</option>
+                                <option value="riesgoso">Riesgoso</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-section">
                     <button type="button" class="btn btn-cancel">Cancelar</button>
-                    <button type="submit" class="btn btn-save">Guardar pedido</button>
+                    <button type="submit" class="btn btn-save">Guardar Pedido Completo</button>
                 </div>
-            </form>
-        </div>
+            </div>
+
+        </form>
     </main>
 
 </body>
