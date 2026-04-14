@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logística Clover System - Panel de Registro Externo</title>
+    <title>Logística Clover System | Operaciones</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,7 +12,11 @@
 <body>
 
     <header class="header">
-        <div class="header-logo">LOGÍSTICA CLOVER SYSTEM</div>
+        <div class="header-brand">
+            <img src="/img/logo.jpg" alt="Logo" class="main-logo">
+            <span class="brand-divider">|</span>
+            <span class="system-name">LOGÍSTICA CLOVER SYSTEM</span>
+        </div>
         <div class="header-user">Asesor: <span>Juan Pérez</span></div>
     </header>
 
@@ -44,28 +48,39 @@
 
             <div class="central-obs-zone">
                 <div class="obs-header">
-                    <div class="form-group method-selector">
-                        <label for="metodo_com">Método de comunicación</label>
-                        <select id="metodo_com" required>
-                            <option value="" disabled selected>Seleccione método</option>
-                            <option value="whatsapp">WhatsApp</option>
-                            <option value="chateapro">Chatea Pro</option>
-                            <option value="llamada">Llamada telefónica</option>
-                            <option value="correo">Correo electrónico</option>
-                        </select>
+                    <div class="selectors-row">
+                        <div class="form-group mini-select">
+                            <label for="metodo_com">Método de comunicación</label>
+                            <select id="metodo_com" required>
+                                <option value="" disabled selected>Seleccione...</option>
+                                <option value="whatsapp">WhatsApp</option>
+                                <option value="chateapro">Chatea Pro</option>
+                                <option value="llamada">Llamada</option>
+                            </select>
+                        </div>
+                        <div class="form-group mini-select">
+                            <label for="estado_logistico">Estado de Gestión</label>
+                            <select id="estado_logistico" required>
+                                <option value="" disabled selected>Seleccione estado...</option>
+                                <option value="entregado">ENTREGADO</option>
+                                <option value="guia_anulada">GUIA_ANULADA</option>
+                                <option value="devolucion">DEVOLUCION</option>
+                                <option value="guia_generada">GUIA GENERADA</option>
+                                <option value="proceso_entrega">PROCESO DE ENTREGA</option>
+                                <option value="novedad">NOVEDAD</option>
+                                <option value="reclamacion">RECLAMACION</option>
+                            </select>
+                        </div>
                     </div>
                     <h2>Detalle de la interacción / Observaciones críticas</h2>
                 </div>
                 
                 <div class="textarea-container">
-                    <label for="observaciones" class="sr-only">Observaciones (más de 500 caracteres)</label>
-                    <textarea id="observaciones" name="observaciones" maxlength="2000" placeholder="Registre aquí el resumen detallado de la conversación, acuerdos, objeciones o cambios solicitados por el cliente vía WhatsApp, llamada o Chatea Pro. Este campo es obligatorio para el seguimiento logístico." required></textarea>
-                    <div class="char-count">Máx 2000 caracteres</div>
+                    <textarea id="observaciones" name="observaciones" maxlength="2000" placeholder="Resumen detallado de la conversación..." required></textarea>
                 </div>
             </div>
 
             <div class="bottom-data-bar">
-                
                 <div class="data-section">
                     <h3>Información del Pedido</h3>
                     <div class="sub-grid-pedido">
@@ -75,7 +90,7 @@
                         </div>
                         <div class="form-group">
                             <label for="cantidad">Cant.</label>
-                            <input type="number" id="cantidad" value="1" min="1">
+                            <input type="number" id="cantidad" value="1">
                         </div>
                         <div class="form-group">
                             <label for="valor">Valor (COP)</label>
@@ -87,22 +102,19 @@
                                 <option value="fb">Facebook</option>
                                 <option value="tk">TikTok</option>
                                 <option value="ig">Instagram</option>
-                                <option value="otro">Otro</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="estado">Estado</label>
-                            <select id="estado">
-                                <option value="nuevo">Pedido nuevo</option>
-                                <option value="revision">Pendiente</option>
+                            <label for="estado_p">Estado Pedido</label>
+                            <select id="estado_p">
+                                <option value="nuevo">Nuevo</option>
                                 <option value="confirmado">Confirmado</option>
-                                <option value="cancelado">Cancelado</option>
                             </select>
                         </div>
                     </div>
                 </div>
 
-                <div class="data-section">
+                <div class="data-section border-left">
                     <h3>Clasificación Logística</h3>
                     <div class="sub-grid-clasificacion">
                         <div class="form-group">
@@ -113,11 +125,9 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="confianza">Nivel de confianza</label>
+                            <label for="confianza">Nivel Confianza</label>
                             <select id="confianza">
                                 <option value="alto">Alto</option>
-                                <option value="medio">Medio</option>
-                                <option value="bajo">Bajo</option>
                                 <option value="riesgoso">Riesgoso</option>
                             </select>
                         </div>
@@ -125,8 +135,8 @@
                 </div>
 
                 <div class="action-section">
-                    <button type="button" class="btn btn-cancel">Cancelar</button>
-                    <button type="submit" class="btn btn-save">Guardar Pedido Completo</button>
+                    <button type="button" class="btn btn-cancel">CANCELAR</button>
+                    <button type="submit" class="btn btn-save">GUARDAR PEDIDO</button>
                 </div>
             </div>
 
