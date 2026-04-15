@@ -229,3 +229,49 @@ textarea {
     .bottom-data-bar { flex-direction: column; }
     .action-section { width: 100%; flex-direction: row; }
 }
+
+/* --- BOTÓN DE NAVEGACIÓN EN EL HEADER --- */
+.header-navigation {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Lo centra en el espacio disponible entre el logo y el usuario */
+}
+
+.btn-nav-dashboard {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(52, 152, 219, 0.1); /* Azul sutil de fondo */
+    color: var(--color-info);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.btn-nav-dashboard svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-nav-dashboard:hover {
+    background-color: var(--color-info);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.btn-nav-dashboard:hover svg {
+    transform: rotate(90deg); /* Animación moderna al pasar el cursor */
+}
+
+/* Ajuste para el header existente */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Asegura espacio entre los elementos */
+}
