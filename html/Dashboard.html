@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Clover System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/Dash-style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-brand">
+            <img src="/img/logo.jpg" alt="Logo" class="main-logo">
+            <span class="brand-divider">|</span>
+            <span class="system-name">DASHBOARD LOGÍSTICO</span>
+        </div>
+        <nav class="nav-links">
+            <a href="/html/index.html" class="nav-item">Registrar Pedido</a>
+            <a href="#" class="nav-item active">Estadísticas</a>
+        </nav>
+        <div class="header-user">Asesor: <span>Juan Pérez</span></div>
+    </header>
+
+    <main class="dashboard-container">
+        
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <span class="kpi-label">Pedidos Hoy</span>
+                <span class="kpi-value">128</span>
+                <span class="kpi-trend up">+12.5%</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-label">En Camino</span>
+                <span class="kpi-value">45</span>
+                <span class="kpi-trend">Logística</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-label">Entregados</span>
+                <span class="kpi-value text-success">89</span>
+                <span class="kpi-trend">Efectividad</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-label">Devoluciones</span>
+                <span class="kpi-value text-danger">4</span>
+                <span class="kpi-trend down">-2%</span>
+            </div>
+        </div>
+
+        <div class="charts-main-grid">
+            
+            <div class="chart-panel">
+                <div class="panel-header">
+                    <h3>Seguimiento de Clientes (WhatsApp vs Llamada)</h3>
+                    <button class="btn-refresh">Actualizar</button>
+                </div>
+                <div class="image-placeholder">
+                    <img src="/img/whatsapp.png" alt="Gráfica de Clientes" class="dashboard-img">
+                </div>
+            </div>
+
+            <div class="chart-panel">
+                <div class="panel-header">
+                    <h3>Rendimiento de Transportadora (Tiempos de Entrega)</h3>
+                </div>
+                <div class="image-placeholder">
+                    <img src="/img/transportadora.png" alt="Gráfica Transportadora" class="dashboard-img">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bottom-grid">
+            <div class="chart-panel small">
+                <div class="panel-header"><h3>Fuentes de Tráfico</h3></div>
+                <div class="image-placeholder">
+                    <img src="/img/meta.png" alt="Fuentes Ads" class="dashboard-img">
+                </div>
+            </div>
+            <div class="chart-panel small">
+                <div class="panel-header"><h3>Mapa de Entregas (Colombia)</h3></div>
+                <div class="image-placeholder">
+                    <img src="/img/Colombia.png" alt="Mapa Entregas" class="dashboard-img">
+                </div>
+            </div>
+            <div class="chart-panel small">
+                <div class="panel-header"><h3>Nivel de Confianza</h3></div>
+                <div class="image-placeholder">
+                    <img src="/img/confianza.png" alt="Nivel Confianza" class="dashboard-img">
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

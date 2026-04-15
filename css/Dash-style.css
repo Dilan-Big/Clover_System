@@ -1,0 +1,176 @@
+:root {
+    --bg-main: #141421; /* Un poco más oscuro para resaltar paneles */
+    --bg-card: #1E1E2F;
+    --bg-panel: #2A2D3E;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B3C0;
+    --color-success: #27AE60;
+    --color-danger: #E74C3C;
+    --color-info: #3498DB;
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- HEADER --- */
+.header {
+    height: 70px;
+    background-color: var(--bg-card);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-brand { display: flex; align-items: center; gap: 15px; }
+.main-logo { height: 40px; }
+.brand-divider { color: #35394f; font-size: 24px; }
+.system-name { font-weight: 700; letter-spacing: 1px; }
+
+.nav-links { display: flex; gap: 20px; }
+.nav-item {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+.nav-item.active { background: var(--bg-panel); color: white; }
+.nav-item:hover { color: var(--color-info); }
+
+.header-user span { color: var(--color-info); font-weight: 600; }
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.dashboard-container {
+    padding: 30px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* KPI CARDS */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.kpi-card {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.03);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.kpi-label { color: var(--text-secondary); font-size: 12px; text-transform: uppercase; }
+.kpi-value { font-size: 28px; font-weight: 700; margin: 10px 0; }
+.kpi-trend { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; width: fit-content; background: rgba(255,255,255,0.05); }
+
+.text-success { color: var(--color-success); }
+.text-danger { color: var(--color-danger); }
+.up { color: var(--color-success); }
+.down { color: var(--color-danger); }
+
+/* MAIN CHARTS GRID */
+.charts-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.chart-panel {
+    background: var(--bg-card);
+    border-radius: 18px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px; /* Tamaño amplio */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.panel-header h3 { font-size: 16px; color: var(--text-primary); font-weight: 600; }
+
+.image-placeholder {
+    flex-grow: 1;
+    background: var(--bg-panel);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px dashed rgba(255,255,255,0.1);
+}
+
+.dashboard-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mantiene la proporción de la gráfica */
+    transition: transform 0.5s;
+    cursor: zoom-in;
+}
+
+.dashboard-img:hover {
+    transform: scale(1.02);
+}
+
+/* GRID INFERIOR */
+.bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.chart-panel.small { min-height: 250px; }
+
+.btn-refresh {
+    background: transparent;
+    border: 1px solid var(--color-info);
+    color: var(--color-info);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-refresh:hover { background: var(--color-info); color: white; }
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .charts-main-grid { grid-template-columns: 1fr; }
+    .bottom-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+    .bottom-grid { grid-template-columns: 1fr; }
+    .header { padding: 0 15px; }
+    .nav-links { display: none; } /* Ocultar en móvil para espacio */
+}
