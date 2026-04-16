@@ -87,7 +87,7 @@ body {
 }
 
 .login-logo {
-    height: 135px; /* Tamaño protagonista */
+    height: 80px; /* Tamaño protagonista */
     width: auto;
     margin-bottom: 20px;
     filter: drop-shadow(0 0 15px rgba(52, 152, 219, 0.3));
